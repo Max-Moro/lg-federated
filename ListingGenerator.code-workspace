@@ -1,0 +1,12 @@
+{
+  "folders": [
+	{ "name": "AI Chat", "path": "ai-chat" },
+	{ "name": "Backlog", "path": "backlog" },
+	{ "name": "LG Config", "path": "lg-cfg" },
+	{ "name": "LG CLI", "path": "cli" },
+    { "name": "VS Code Extension", "path": "vscode" },
+    { "name": "IntelliJ Platform Plugin", "path": "intellij" },
+    { "name": "Federated documentation", "path": "docs" },
+    { "name": "Scripts", "path": "scripts" }
+  ]
+}

@@ -1,0 +1,50 @@
+mode-sets:
+  ai-interaction:
+    title: "AI Interaction"
+    modes:
+      ask:
+        title: "Ask"
+        description: "Question-answer mode"
+      agent:
+        title: "Agent"
+        description: "Automatic mode of working with tools"
+        tags: [agent, tools]
+
+  ai-tools:
+    title: "AI Tools"
+    modes:
+      other:
+        title: "Other"
+        description: "Other tools"
+      claude-code:
+        title: "Claude Code"
+        description: "Claude Code by Anthropic"
+        tags: [claude-code]
+      claude-code-subagents:
+        title: "Claude Code (Subagents)"
+        description: "Claude Code with subagents"
+        tags: [claude-code, claude-code-subagents]
+
+  cli-context:
+    title: "CLI context"
+    modes:
+      only-intro:
+        title: "Introductory only"
+      src:
+        title: "Source code"
+        tags: [src-cli]
+      docs:
+        title: "Extended documentation"
+        tags: [docs]
+      full:
+        title: "Code + documentation"
+        tags: [src-cli, docs]
+
+  using-references:
+    title: "Use of references"
+    modes:
+      not-use:
+        title: "Do not use"
+      use:
+        title: "Use"
+        tags: [ref]

@@ -1,0 +1,18 @@
+# LG cache directory
+.lg-cache/
+
+# Local development directories (not for public repo)
+ai-chat/
+test-repo/
+intellij-platform-docs/
+tree-sitter/
+backlog/
+
+# Temporary files
+*.zip
+.claude-session.lock
+
+# Claude Code - local settings only
+.claude/settings.local.json
+.claude/*.local.json
+CLAUDE.local.md
