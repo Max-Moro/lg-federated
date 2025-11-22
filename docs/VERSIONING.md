@@ -52,6 +52,63 @@ IntelliJ:  0.9.0 (requires CLI ^0.9.0, i.e., >=0.9.0 <0.10.0)
 - Plugin PATCH updates don't require CLI updates (UI/UX improvements only)
 - CLI MINOR/MAJOR updates require synchronized plugin releases with updated pin
 
+## CLI Version Management
+
+### User Mode (Default)
+
+IDE plugins automatically manage CLI installation via **pipx**:
+
+**First Run:**
+```bash
+# Plugin checks if pipx is available
+# If yes, installs CLI with version constraint:
+pipx install "listing-generator>=0.9.0,<0.10.0"
+```
+
+**Auto-Update Logic:**
+- Plugins check for CLI updates **every 24 hours** (in-memory cache, resets on IDE restart)
+- If installed version is **incompatible** (different major.minor) → upgrade immediately
+- If installed version is **compatible** but **24h elapsed** → check for patch updates
+- Update uses `pipx uninstall + reinstall` with version constraint to stay within compatible range
+
+**Example:**
+```
+Plugin v0.9.0 requires CLI ^0.9.0
+
+Day 1:  Installs CLI 0.9.0
+Day 2:  Checks PyPI, finds 0.9.1, upgrades to 0.9.1
+Day 3:  No check (24h cache)
+Day 4:  Checks PyPI, finds 0.9.2, upgrades to 0.9.2
+        PyPI also has 0.10.0, but constraint blocks it
+```
+
+**Requirements:**
+- pipx installed on user's system ([installation guide](https://pipx.pypa.io/stable/))
+- Internet access for PyPI
+
+### Developer Mode
+
+For testing **unreleased CLI versions** during development:
+
+**VS Code:**
+```json
+{
+  "lg.developerMode": true,
+  "lg.python.interpreter": "/path/to/lg-cli/.venv/bin/python"
+}
+```
+
+**IntelliJ:**
+- Settings → Tools → Listing Generator → Developer Mode ✓
+- Python Interpreter: `/path/to/lg-cli/.venv/bin/python`
+
+CLI is executed as: `python -m lg.cli` (no pipx, no auto-updates)
+
+**Use Cases:**
+- Testing feature branches before release
+- Contributing to CLI development
+- Debugging CLI issues with local patches
+
 ## Branch Strategy
 
 ### Branch Types

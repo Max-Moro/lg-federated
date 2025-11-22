@@ -56,15 +56,26 @@ lg-federated/
 
 ### For End Users
 
-**Install CLI:**
+**Option 1: IDE Plugins (Recommended)**
+
+Install IDE plugin - CLI installs automatically via pipx:
+- [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=max-moro.listing-generator) - Zero config, auto-updates
+- [IntelliJ Plugin](https://plugins.jetbrains.com/plugin/XXXXX-listing-generator) - Zero config, auto-updates
+
+First run will install `listing-generator` CLI via pipx with version pinning.
+
+**Option 2: Standalone CLI**
+
 ```bash
+# Install via pipx (recommended)
+pipx install listing-generator
+
+# Or via pip
 pip install listing-generator
+
+# Verify installation
 listing-generator --version
 ```
-
-**Install IDE Plugins:**
-- [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=max-moro.vscode-lg)
-- [IntelliJ Plugin](https://plugins.jetbrains.com/plugin/XXXXX-listing-generator)
 
 **Create starter config:**
 ```bash
