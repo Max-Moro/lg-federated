@@ -114,4 +114,3 @@ See [DEVELOPMENT.md](./docs/DEVELOPMENT.md) for detailed instructions.
 - **[DEVELOPMENT.md](./docs/DEVELOPMENT.md)** - Development environment setup
 - **[CONTRIBUTING.md](./docs/CONTRIBUTING.md)** - Contribution guidelines
 - **[VERSIONING.md](./docs/VERSIONING.md)** - Release process and versioning
-
