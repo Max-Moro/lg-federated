@@ -1,0 +1,10 @@
+using-references:
+  mode-sets:
+    using-references:
+      title: "Use of references"
+      modes:
+        not-use:
+          title: "Do not use"
+        use:
+          title: "Use"
+          tags: [ref]

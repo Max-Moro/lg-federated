@@ -1,3 +1,6 @@
+---
+include: ["/ai-interaction", "/using-references"]
+---
 {% if tag:agent %}
 ${tpl@vscode:agent/index}
 
